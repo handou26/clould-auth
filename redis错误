@@ -1,0 +1,7 @@
+bind 0.0.0.0   外网访问改成这个
+
+requirepass  redis  需要密码
+
+protected-mode no  保护模式
+
+daemonize yes 后台启动
