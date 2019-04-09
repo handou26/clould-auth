@@ -5,3 +5,8 @@ requirepass  redis  需要密码
 protected-mode no  保护模式
 
 daemonize yes 后台启动
+
+
+
+
+1 User must be authenticated with Spring Security before authorization can be completed.

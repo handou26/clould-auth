@@ -1,5 +1,5 @@
 server:
-  port: 1200
+  port: 10888
 spring :
    application :
       name : authService 
@@ -9,39 +9,36 @@ spring :
     port: 6379
     password: redis
     timeout: 60s
-   zipkin:
-     base-url: http://localhost:7777
-     locator:
-        discovery:
-            enabled: true
-   sleuth:
-    sampler:
-      probability: 1.0
-    web:  
-           skipPattern : (^cleanup.*)     
+   datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/springsecurity?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+      username: root
+      password: 1234  
+   security:
+     basic:
+      enabled: false    
 eureka:
   client:
     serviceUrl:
       default-zone: http://localhost:8761/eureka/
-jwt:
-  blacklist:
-    key:
-      format: JWT_BLACKLIST::%s
-  refresh:
-    token:
-      key:
-        format: JWT_REFRESH_TOKEN::%s
-  secret:
-    key: asdfghjkl
-refresh:
-  token:
-    expire:
-      time: 120000
-token:
-   expire:
-    time: 60000  
-    
       
-feign:  #启用hystrix监控
-  hystrix:
-    enabled: true     
+authorizationparam:
+  client-id: 123456 
+  secret: 123456 
+  scopes: read,write 
+  authorized-grant-types: implicit, refresh_token, password, authorization_code
+  token-expire: 10000 
+  token-refresh: 1500 
+  
+  
+#  授权码模式（authorization_code）（即先登录获取code,再获取token)
+
+#  简化模式（implicit）简化模式(在redirect_uri 的Hash传递token; Auth客户端运行在浏览器中,如JS,Flash)
+
+#  密码模式（password）密码模式(将用户名,密码传过去,直接获取token)
+
+#  客户端模式（client credentials）客户端模式(无用户,用户向客户端注册,然后客户端以自己的名义向’服务端’获取资源)
+
+
+
+

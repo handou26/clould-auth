@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "name": "authorizationparam",
+      "type": "com.jd.config.AuthorizationParam",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    }
+  ],
+  "properties": [
+    {
+      "name": "authorizationparam.authorized-grant-types",
+      "type": "java.lang.String",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    },
+    {
+      "name": "authorizationparam.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    },
+    {
+      "name": "authorizationparam.scopes",
+      "type": "java.lang.String[]",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    },
+    {
+      "name": "authorizationparam.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    },
+    {
+      "name": "authorizationparam.token-expire",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    },
+    {
+      "name": "authorizationparam.token-refresh",
+      "type": "java.lang.Integer",
+      "sourceType": "com.jd.config.AuthorizationParam"
+    }
+  ],
+  "hints": []
+}
